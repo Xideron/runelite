@@ -129,8 +129,9 @@ class AgilityOverlay extends Overlay
 						graphics.setColor(configColor);
 					}
 
+
 					graphics.draw(objectClickbox);
-					graphics.setColor(ColorUtil.colorWithAlpha(configColor, configColor.getAlpha() / 5));
+					graphics.setColor(ColorUtil.colorWithAlpha(configColor, config.setClickboxOpacityLevel()));
 					graphics.fill(objectClickbox);
 				}
 			}

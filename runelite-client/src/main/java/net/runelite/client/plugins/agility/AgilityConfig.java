@@ -25,12 +25,14 @@
 package net.runelite.client.plugins.agility;
 
 import java.awt.Color;
+
 import net.runelite.client.config.Alpha;
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 import net.runelite.client.config.ConfigSection;
 import net.runelite.client.config.Units;
+import net.runelite.client.config.Range;
 
 @ConfigGroup("agility")
 public interface AgilityConfig extends Config
@@ -51,6 +53,21 @@ public interface AgilityConfig extends Config
 	default boolean showClickboxes()
 	{
 		return true;
+	}
+
+	@Range(
+			min = 0,
+			max = 255
+	)
+	@ConfigItem(
+			keyName = "clickboxOpacityLevel",
+			name = "Clickbox Opacity",
+			description = "The opacity (transparency) level of the clickbox. Requires \"Show Clickboxes\" to be enabled.",
+			position = 1
+	)
+	default int setClickboxOpacityLevel()
+	{
+		return 51;
 	}
 
 	@ConfigItem(
